@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+                            <!-- npx tailwindcss -i ./src/input.css -o ./src/output.css --watch -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather by G</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+<div id="right" class="main h-screen gap-3 rounded-xl flex flex-col md:flex-row bg-cover">
+    <!-- <div  class="right h-  full rounded-xl flex flex-col md:flex-row justify-between bg-cover"> -->
+        <div class=" md:w-1/3 h-1/2 md:h-screen md:flex md:flex-col md:justify-around">
+                                                                 <!-- rigt-top -->
+        <div class="top flex flex-col justify-around p-3 h-1/2 ">
+            <div class="text-center flex justify-evenly gap-3 flex-col h-1/2">  
+                <p id="wish" class="text-2xl font-bold md:text-5xl">Good Morning</p>                           
+                <div>
+                    <input id="city" type="text" placeholder="Enter your city name" class="text-center bg-transparent border rounded-lg p-2"> 
+                    <button id="btn" class="border p-2 rounded-lg">Search</button>
+                </div>
+            </div>
+            <div class="text-center text-2xl">
+                <p id="date">21/07/2025</p>
+                <p id="time">12:00 PM</p>
+            </div>
+        </div>
+                                    <!-- middile -->
+        <div class="botom flex flex-col rounded-xl justify-around items-center  md:h-1/2 m-3 p-3 " style="background-color: rgba(255, 255, 255, 0.25);">
+            <p id="city_name" class="text-4xl text-black">Your Location</p>
+            <p class="text-3xl text-black "><span id="temperature">00</span><sup>o</sup>C <i class="fa-solid fa-temperature-three-quarters"></i></p>
+            <img id="weather0" src="Assects/sunny.png" class="h-16 w-16"></img>
+            <p class="text-xl"><span id="humidity">00</span> % <i class="fa-solid fa-droplet"></i>
+              <span id="wind">00</span> km/h <i class="fa-solid fa-wind"></i></p>
+        </div>
+    </div>
+                                                                <!-- hourly temp -->
+        <div class="md:h-screen md:w-2/3 h-1/2 flex flex-col justify-around">
+        <div class=" flex flex-col justify-center items-center gap-3 p-3 md:h-1/2 ">
+        <h1 class="text-2xl ml-3 font-bold">Hourly Forecast details</h1>
+        <div class="hour flex flex-row justify-between items-center w-full p-3 rounded-xl" style="background-color: rgba(255, 255, 255, 0.25);">
+            <div>
+                <p id="hr1"></p>
+                <p><span id="tem1">00</span><sup>o</sup>C <i class="fa-solid fa-temperature-three-quarters"></i></p>
+            </div>
+            <div>
+                <p id="hr2"></p>
+                <p><span id="tem2">00</span><sup>o</sup>C <i class="fa-solid fa-temperature-three-quarters"></i></p>
+            </div>
+            <div>
+                <p id="hr3"></p>
+                <p><span id="tem3">00</span><sup>o</sup>C <i class="fa-solid fa-temperature-three-quarters"></i></p>
+            </div>
+            <div>
+                <p id="hr4"></p>
+                <p><span id="tem4">00</span><sup>o</sup>C <i class="fa-solid fa-temperature-three-quarters"></i></p>
+            </div>
+            <div>
+                <p id="hr5"></p>
+                <p><span id="tem5">00</span><sup>o</sup>C <i class="fa-solid fa-temperature-three-quarters"></i></p>
+            </div>
+            <div>
+                <p id="hr6"></p>
+                <p><span id="tem6">00</span><sup>o</sup>C <i class="fa-solid fa-temperature-three-quarters"></i></p>
+            </div>
+        </div>
+        </div>
+                                                              <!-- Bottom -->
+    <div class="flex flex-col md:justify-center md:items-center gap-3 md:h-1/2  ">
+        <h1 class="text-2xl ml-3 font-bold text-center">Weakly Forecast details</h1>
+            <div class="flex flex-row text-center text-xl gap-3 p-3 overflow-x-auto" style="scrollbar-width: none;">
+
+                <div class="min-w-32 flex p-4 flex-col justify-around rounded-xl" style="background-color: rgba(255, 255, 255, 0.25);">
+                    <p id="next1">day</p>
+                    <p><span id="temperature1">00</span><sup>o</sup>C <i class="fa-solid fa-temperature-three-quarters"></i></p>
+                    <img id="weather1" src="Assects/sunny.png" class="h-12 w-12 m-auto">
+                    <p id="probality1">00% <i class="fa-solid fa-wind"></i></p>
+                    <!-- <p id="wind">00 <i class="fa-solid fa-wind"></i></p> -->
+                </div>
+
+                <div class="flex p-4 flex-col justify-around rounded-xl min-w-32" style="background-color: rgba(255, 255, 255, 0.25);">
+                    <p id="next2">day</p>
+                    <p><span id="temperature2">00</span><sup>o</sup>C <i class="fa-solid fa-temperature-three-quarters"></i></p>
+                    <img id="weather2" src="Assects/sunny.png" class="h-12 w-12 m-auto">
+                    <p id="probality2">00% <i class="fa-solid fa-wind"></i></p>
+                </div>
+
+                <div class="next1 p-4 flex flex-col justify-around rounded-xl min-w-32" style="background-color: rgba(255, 255, 255, 0.25);">
+                    <p id="next3">day</p>
+                    <p><span id="temperature3">00</span><sup>o</sup>C <i class="fa-solid fa-temperature-three-quarters"></i></p>
+                    <img id="weather3" src="Assects/sunny.png" class="h-12 w-12 m-auto">
+                    <p id="probality3" >00% <i class="fa-solid fa-wind"></i></p>
+                </div>
+            <!-- </div> -->
+
+            <!-- <div class="flex justify-around flex-row text-center text-xl gap-3 md:h-1/2"> -->
+                <div class="next2 p-4 flex flex-col justify-around  rounded-xl min-w-32" style="background-color: rgba(255, 255, 255, 0.25);">
+                    <p id="next4">day</p>
+                    <p><span id="temperature4">00</span><sup>o</sup>C <i class="fa-solid fa-temperature-three-quarters"></i></p>
+                    <img id="weather4" src="Assects/sunny.png" class="h-12 w-12 m-auto">
+                    <p id="probality4" >00% <i class="fa-solid fa-wind"></i></p>
+                </div>
+
+                <div class="next3 p-4 flex flex-col justify-around  rounded-xl min-w-32" style="background-color: rgba(255, 255, 255, 0.25);">
+                    <p id="next5">day</p>
+                    <p><span id="temperature5">00</span><sup>o</sup>C <i class="fa-solid fa-temperature-three-quarters"></i></p>
+                   <img id="weather5" src="Assects/sunny.png" class="h-12 w-12 m-auto">
+                    <p id="probality5" >00%  <i class="fa-solid fa-wind"></i></p>
+                </div>
+
+                <div class="next4 p-4 flex flex-col justify-around rounded-xl min-w-32" style="background-color: rgba(255, 255, 255, 0.25);">
+                    <p id="next6">day</p>
+                    <p><span id="temperature6">00</span><sup>o</sup>C <i class="fa-solid fa-temperature-three-quarters"></i></p>
+                    <img id="weather6" src="Assects/sunny.png" class="h-12 w-12 m-auto">
+                    <p id="probality6">00% <i class="fa-solid fa-wind"></i></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="weather.js"></script>
+</body>
+</html> 
