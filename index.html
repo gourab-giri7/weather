@@ -15,7 +15,7 @@
                                                                  <!-- rigt-top -->
         <div class="top flex flex-col justify-around p-3 h-1/2 ">
             <div class="text-center flex justify-evenly gap-3 flex-col h-1/2">  
-                <p id="wish" class="text-2xl font-bold md:text-5xl">Good Morning</p>                           
+                <p id="wish" class="text-2xl font-bold md:text-5xl text-center">Good Morning</p>                           
                 <div>
                     <input id="city" type="text" placeholder="Enter your city name" class="text-center bg-transparent border rounded-lg p-2"> 
                     <button id="btn" class="border p-2 rounded-lg">Search</button>
@@ -28,17 +28,17 @@
         </div>
                                     <!-- middile -->
         <div class="botom flex flex-col rounded-xl justify-around items-center  md:h-1/2 m-3 p-3 " style="background-color: rgba(255, 255, 255, 0.25);">
-            <p id="city_name" class="text-4xl text-black">Your Location</p>
-            <p class="text-3xl text-black "><span id="temperature">00</span><sup>o</sup>C <i class="fa-solid fa-temperature-three-quarters"></i></p>
+            <p id="city_name" class="text-4xl text-black text-center">Your Location</p>
+            <p class="text-3xl text-black text-center"><span id="temperature">00</span><sup>o</sup>C <i class="fa-solid fa-temperature-three-quarters"></i></p>
             <img id="weather0" src="Assects/sunny.png" class="h-16 w-16"></img>
-            <p class="text-xl">Humidity <span id="humidity">00</span> % <i class="fa-solid fa-droplet"></i>
+            <p class="text-xl text-center">Humidity <span id="humidity">00</span> % </i>|
               <span id="wind">00</span> km/h <i class="fa-solid fa-wind"></i></p>
         </div>
     </div>
                                                                 <!-- hourly temp -->
         <div class="md:h-screen md:w-2/3 h-1/2 flex flex-col justify-around">
         <div class=" flex flex-col justify-center items-center gap-3 p-3 md:h-1/2 ">
-        <h1 class="text-2xl ml-3 font-bold">Hourly Forecast details</h1>
+        <h1 class="text-2xl font-bold w-full text-center" style="background-color: rgba(221, 221, 220, 0.575);">Hourly Forecast details</h1>
         <div class="hour flex flex-row justify-between items-center w-full p-3 rounded-xl" style="background-color: rgba(255, 255, 255, 0.25);">
             <div>
                 <p id="hr1"></p>
@@ -68,7 +68,7 @@
         </div>
                                                               <!-- Bottom -->
     <div class="flex flex-col md:justify-center md:items-center gap-3 md:h-1/2  ">
-        <h1 class="text-2xl ml-3 font-bold text-center">Weakly Forecast details</h1>
+        <h1 class="text-2xl font-bold text-center " style="background-color: rgba(221, 221, 220, 0.575);">Weakly Forecast details</h1>
             <div class="flex flex-row text-center text-xl gap-3 p-3 overflow-x-auto" style="scrollbar-width: none;">
 
                 <div class="min-w-32 flex p-4 flex-col justify-around rounded-xl" style="background-color: rgba(255, 255, 255, 0.25);">
@@ -121,5 +121,4 @@
 </div>
     <script src="weather.js"></script>
 </body>
-
 </html> 
