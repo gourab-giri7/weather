@@ -1,9 +1,10 @@
                                           // location
 async function getLocation(city){
 geo=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=10&language=en&format=json`)
-console.log(geo)
 geo = await geo.json()
-
+// time=await fetch("https://api.savvycal.com/v1/time_zones/America/Chicago")
+// await time.json()
+// console.log(time)
 return geo.results[0]
 }
                                     // search
@@ -19,6 +20,8 @@ data=
    document.querySelector('#humidity').innerText=data.hourly.relative_humidity_2m[h]
    document.querySelector('#wind').innerText=data.hourly.wind_gusts_10m[h]
    document.querySelector('#city_name').innerText=lat.name
+   document.querySelector('#state').innerText=lat.admin1
+   document.querySelector('#country').innerText=lat.country
                         // DAY Wise
       for(i=0;i<=6;i++){
                // weather_code
@@ -51,7 +54,7 @@ data=
       document.querySelector(`#tem${i+1}`).innerText=parseInt(data.hourly.temperature_2m[h+(i+1)]);
       }
    }
-   console.log(data)
+   // console.log(data)
    }
    else
       alert("ghgh")
@@ -59,7 +62,7 @@ data=
    
 })
    const now=new Date()
-   const h= now.getHours()
+   let h= now.getHours()
    let month= now.getMonth()+1<10?`0${now.getMonth()+1}`:now.getMonth()+1
    let day= now.getDate()<10?`0${now.getDate()}`:now.getDate()
                               // date
@@ -84,11 +87,11 @@ data=
    }
    else if(h>=16 && h<=18){
             wish="Good Evening"
-            document.querySelector('#right').style.cssText=`background-image:url(Assects/Eveining.png);color:white;`
+            document.querySelector('#right').style.cssText=`background-image:url(Assects/Eveining.png);`
    }
    else{
       wish="Good Night"
-        document.querySelector('#right').style.cssText=` background-size:cover background-image:url(Assects/Night.png);color:white;`
+      document.querySelector('#right').style.cssText=`background-size:cover; background-image:url(Assects/Night.png);color:white;`
    }
 
    document.querySelector('#time').innerText=time
